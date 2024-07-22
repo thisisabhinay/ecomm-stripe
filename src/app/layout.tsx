@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/Navbar"
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -16,7 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar />
+        <main className="grid grid-cols-1 auto-rows-max mx-auto max-w-screen-sm px-4 sm:px-6 lg:max-w-screen-xl">
+          {children}
+        </main>
+      </body>
     </html>
-  );
+  )
 }
