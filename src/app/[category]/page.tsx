@@ -3,7 +3,7 @@ import Image from "next/image"
 import { simplifiedProduct } from "@/interface"
 import { sanityClient } from "@/lib/sanity"
 
-export interface ProductPageProps {
+export interface CategoryPageProps {
   params: {
     category: string
   }
@@ -25,7 +25,7 @@ async function getData(category: string) {
 
 export default async function CategoryPage({
   params
-}: Readonly<ProductPageProps>) {
+}: Readonly<CategoryPageProps>) {
   const data: simplifiedProduct[] = await getData(params.category)
 
   function getHref(product: simplifiedProduct) {
