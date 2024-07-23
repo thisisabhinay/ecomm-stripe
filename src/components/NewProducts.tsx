@@ -18,7 +18,7 @@ async function getData() {
   return await sanityClient.fetch(query)
 }
 
-export default async function Newest() {
+export default async function NewProducts() {
   const data: simplifiedProduct[] = await getData()
 
   return (
