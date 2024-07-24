@@ -17,3 +17,13 @@ export interface fullProduct {
   description: string
   priceId: string
 }
+
+export interface CartProduct {
+  id: string
+  name: string
+  description: string
+  price: number
+  currency: string
+  image: any
+  priceId: string
+}
