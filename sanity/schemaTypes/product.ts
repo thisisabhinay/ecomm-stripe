@@ -40,5 +40,10 @@ export default {
       type: "number",
       title: "Price",
     },
+    {
+      name: "price_id",
+      title: "Stripe Price Id",
+      type: "string"
+    }
   ],
 }
