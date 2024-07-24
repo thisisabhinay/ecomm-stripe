@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar"
+import ShoppingCart from "@/components/ShoppingCart";
+import CartProvider from "@/providers/CartProvider";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -18,10 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <main className="grid grid-cols-1 auto-rows-max mx-auto max-w-screen-sm px-4 sm:px-6 lg:max-w-screen-xl">
-          {children}
-        </main>
+        <CartProvider>
+          <Navbar />
+          <ShoppingCart/>
+          <main className="grid grid-cols-1 auto-rows-max mx-auto max-w-screen-sm px-4 sm:px-6 lg:max-w-screen-xl">
+            {children}
+          </main>
+        </CartProvider>
       </body>
     </html>
   )
