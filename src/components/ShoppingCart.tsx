@@ -17,8 +17,19 @@ export default function ShoppingCart() {
     cartDetails,
     removeItem,
     totalPrice,
+    redirectToCheckout
   } = useShoppingCart()
 
+  console.log({cartDetails})
+
+  async function handleCheckoutClick(event: any) {
+    event.preventDefault()
+    try {
+      await redirectToCheckout()
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   return (
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
@@ -77,7 +88,7 @@ export default function ShoppingCart() {
             </ul>
           </div>
 
-          <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+          <div className="border-t border-gray-200 py-6">
             <div className="flex justify-between text-base font-medium text-gray-900">
               <p>Subtotal:</p>
               <p>${totalPrice}</p>
@@ -87,14 +98,14 @@ export default function ShoppingCart() {
             </p>
 
             <div className="mt-6">
-              <Button onClick={() => null} className="w-full">
+              <Button onClick={(e) => handleCheckoutClick(e)} className="w-full">
                 Checkout
               </Button>
             </div>
 
             <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
               <p>
-                OR{" "}
+                <span className="block mb-1">OR</span>
                 <button
                   onClick={() => handleCartClick()}
                   className=" font-medium text-primary hover:text-primary/80"
