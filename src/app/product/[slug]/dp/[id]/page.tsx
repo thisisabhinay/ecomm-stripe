@@ -3,6 +3,7 @@ import {sanityClient} from "@/lib/sanity"
 import { fullProduct } from "@/interface"
 import { Button } from "@/components/ui/button"
 import AddToBag from "@/components/AddToBag"
+import CheckoutNow from "@/components/CheckoutNow"
 import { Star } from "lucide-react"
 
 export interface ProductPageProps {
@@ -79,7 +80,7 @@ export default async function ProductPage({ params }: Readonly<ProductPageProps>
           <div className="flex gap-2.5">
             <AddToBag
               currency="USD"
-              id={data._id}
+              id={data.priceId}
               description={data.description}
               image={data.images[0]}
               name={data.name}
@@ -87,7 +88,16 @@ export default async function ProductPage({ params }: Readonly<ProductPageProps>
               key={data._id}
               priceId={data.priceId}
             />
-            <Button variant={"secondary"}>Checkout now</Button>
+            <CheckoutNow
+              currency="USD"
+              id={data.id}
+              description={data.description}
+              image={data.images[0]}
+              name={data.name}
+              price={data.price}
+              key={data._id}
+              priceId={data.priceId}
+            />
           </div>
 
           <p className="mt-12 text-base text-gray-500 tracking-wide">
