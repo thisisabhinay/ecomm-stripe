@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { CircleX } from "lucide-react";
 import Link from "next/link";
 
-export default function stripeSuccess() {
+export default function PurchaseFailed() {
   return (
     <div className="h-screen">
       <div className="mt-32 md:max-w-[50vw] mx-auto">
