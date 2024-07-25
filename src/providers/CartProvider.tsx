@@ -13,8 +13,8 @@ export default function CartProvider({ children }: CartProviderProp) {
       mode="payment"
       cartMode="client-only"
       stripe={process.env.NEXT_PUBLIC_STRIPE_KEY as string}
-      successUrl="http://localhost:3000/purchase/success"
-      cancelUrl="http://localhost:3000/purchase/error"
+      successUrl="https://ecomm-stripe-demo.vercel.app/purchase/success"
+      cancelUrl="https://ecomm-stripe-demo.vercel.app/purchase/error"
       currency="USD"
       billingAddressCollection={false}
       shouldPersist={true}
