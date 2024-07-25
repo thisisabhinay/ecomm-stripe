@@ -20,8 +20,6 @@ export default function ShoppingCart() {
     redirectToCheckout
   } = useShoppingCart()
 
-  console.log({cartDetails})
-
   async function handleCheckoutClick(event: any) {
     event.preventDefault()
     try {
