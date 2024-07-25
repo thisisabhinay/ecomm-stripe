@@ -13,6 +13,8 @@ export interface ProductPageProps {
   }
 }
 
+export const dynamic = "force-dynamic"
+
 async function getData(id: string) {
   const query = `
     *[_type == "product" && _id == "${id}"][0] {
