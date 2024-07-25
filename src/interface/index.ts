@@ -19,7 +19,6 @@ export interface fullProduct {
 }
 
 export interface CartProduct {
-  id: string
   name: string
   description: string
   price: number

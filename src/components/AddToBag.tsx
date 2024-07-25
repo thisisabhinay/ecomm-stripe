@@ -6,7 +6,6 @@ import { urlFor } from "@/lib/sanity"
 import { CartProduct } from "@/interface"
 
 export default function AddToBag({
-  id,
   currency,
   description,
   image,
@@ -17,7 +16,6 @@ export default function AddToBag({
   const { addItem, handleCartClick } = useShoppingCart()
 
   const product = {
-    id: id,
     name: name,
     description: description,
     price: price,

@@ -80,7 +80,6 @@ export default async function ProductPage({ params }: Readonly<ProductPageProps>
           <div className="flex gap-2.5">
             <AddToBag
               currency="USD"
-              id={data.priceId}
               description={data.description}
               image={data.images[0]}
               name={data.name}
@@ -90,7 +89,6 @@ export default async function ProductPage({ params }: Readonly<ProductPageProps>
             />
             <CheckoutNow
               currency="USD"
-              id={data.id}
               description={data.description}
               image={data.images[0]}
               name={data.name}
